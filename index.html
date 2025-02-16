@@ -1,0 +1,250 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+  /* Holiday Indicator (small badge or icon) */
+  .calendar-day.holiday::before {
+    content: "🎉";
+    /* Example: Party emoji as an indicator */
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 14px;
+  }
+</style>
+
+<body>
+
+  <div class="mobile-header z-depth-1">
+
+    <div class="row">
+      <div class="col-2">
+        <a href="#" data-activates="sidebar" class="button-collapse" style="">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <div class="col">
+        <h4>Events</h4>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="main-wrapper">
+
+    <div class="sidebar-wrapper z-depth-2 side-nav fixed" id="sidebar">
+
+      <div class="sidebar-title">
+        <h4>Events</h4>
+        <h5 id="eventDayName">Date</h5>
+      </div>
+      <div class="sidebar-events" id="sidebarEvents">
+        <div class="empty-message">Sorry, no events to selected date</div>
+      </div>
+
+    </div>
+
+    <div class="content-wrapper grey lighten-3">
+      <div class="container">
+
+        <div class="calendar-wrapper z-depth-2">
+
+          <div class="header-background">
+            <div class="calendar-header">
+
+              <a class="prev-button" id="prev">
+                <i class="material-icons">keyboard_arrow_left</i>
+              </a>
+              <a class="next-button" id="next">
+                <i class="material-icons">keyboard_arrow_right</i>
+              </a>
+
+              <div class="row header-title">
+
+                <div class="header-text">
+                  <h3 id="month-name">February</h3>
+                  <h5 id="todayDayName">Today is Friday 7 Feb</h5>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="calendar-content">
+            <div id="calendar-table" class="calendar-cells">
+
+      <div id="table-header">
+                
+                  <div class="col">Sun</div>
+                  <div class="col">Mon</div>
+                  <div class="col">Tue</div>
+                  <div class="col">Wed</div>
+                  <div class="col">Thu</div>
+                  <div class="col">Fri</div>
+                  <div class="col">Sat</div>
+
+                </div> 
+              </div> 
+
+              <div id="table-body" class="">
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <form id="sticker-form">
+              <label for="sticker-select">Choose a Sticker:</label>
+              <select id="sticker-select">
+                <!-- Options for selecting stickers -->
+                <option value="🌟">Star</option>
+                <option value="💡">Light Bulb</option>
+                <option value="📅">Calendar</option>
+                <option value="🎵">Musical Note</option>
+                <option value="🚀">Rocket</option>
+                <option value="🌈">Rainbow</option>
+                <option value="🌹">Rose</option>
+                <option value="☕">Coffee Cup</option>
+                <option value="📚">Books</option>
+                <option value="🧠">Brain</option>
+                <option value="⚽">Soccer Ball</option>
+                <option value="🌳">Tree</option>
+                <option value="🌙">Crescent Moon</option>
+                <option value="🍀">Four Leaf Clover</option>
+                <option value="⭐">Shooting Star</option>
+                <option value="🔥">Fire</option>
+
+                <option value="🎁">Gift</option>
+                <option value="🐱">Cat</option>
+                <option value="🐶">Dog</option>
+                <option value="🐬">Dolphin</option>
+                <option value="🌍">Earth</option>
+                <option value="🍔">Hamburger</option>
+                <option value="🍕">Pizza</option>
+                <option value="🍩">Donut</option>
+                <option value="🦄">Unicorn</option>
+                <option value="🤖">Robot</option>
+                <option value="👾">Alien Monster</option>
+                <option value="🏰">Castle</option>
+                <option value="🚗">Car</option>
+                <option value="✈️">Airplane</option>
+                <option value="🚀">Rocket</option>
+                <option value="🧩">Puzzle Piece</option>
+                <option value="🔮">Crystal Ball</option>
+                <option value="🎄">Christmas Tree (Christmas)</option>
+                <option value="🎅">Santa Claus (Christmas)</option>
+                <option value="🕎">Menorah (Hanukkah)</option>
+                <option value="🍂">Maple Leaf (Thanksgiving)</option>
+                <option value="🦃">Turkey (Thanksgiving)</option>
+                <option value="🎃">Jack-O-Lantern (Halloween)</option>
+                <option value="🧨">Firecracker (Chinese New Year)</option>
+                <option value="🏮">Lantern (Chinese New Year)</option>
+                <option value="🎉">Party Popper (New Year's Eve)</option>
+                <option value="🎆">Fireworks (Independence Day)</option>
+                <option value="🐇">Rabbit (Easter)</option>
+                <option value="🥚">Egg (Easter)</option>
+                <option value="💘">Heart (Valentine's Day)</option>
+                <option value="🍀">Four Leaf Clover (St. Patrick's Day)</option>
+                <option value="🌹">Rose (Valentine's Day)</option>
+                <option value="🔯">Star of David (Jewish Holidays)</option>
+                <option value="🕊️">Dove (International Peace Day)</option>
+                <option value="🛠️">Hammer and Sickle (International Workers' Day)</option>
+                <option value="🌍">Earth (Earth Day)</option>
+                <option value="🪔">Diya Lamp (Diwali)</option>
+                <option value="🛍️">Shopping Bags (Black Friday)</option>
+                <option value="🎓">Graduation Cap (Graduation Ceremonies)</option>
+                <option value="🍾">Bottle with Popping Cork (Celebrations)</option>
+              </select>
+              <button type="button" id="add-sticker-button">Add Sticker</button>
+            </form>
+          </div>
+          <div class="calendar-footer">
+            <div class="emptyForm" id="emptyForm">
+              <h4 id="emptyFormTitle">No events now</h4>
+              <a class="addEvent" id="changeFormButton">Add new</a>
+            </div>
+            <div class="addForm" id="addForm">
+              <h4>Add new event</h4>
+
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="eventTitleInput" type="text" class="validate">
+                  <label for="eventTitleInput">Title</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="eventDescInput" type="text" class="validate">
+                  <label for="eventDescInput">Description</label>
+                </div>
+              </div>
+
+              <div class="addEventButtons">
+                <a class="waves-effect waves-light btn blue lighten-2" id="addEventButton">Add</a>
+                <a class="waves-effect waves-light btn grey lighten-2" id="cancelAdd">Cancel</a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div>
+    <p><small>CSS sin() and cos() does <strong>NOT</strong> work in your browser.</small></p>
+    <div class="clock">
+      <div class="clock-face" id="app">
+        <time datetime="12:00">12</time>
+        <time datetime="1:00">1</time>
+        <time datetime="2:00">2</time>
+        <time datetime="3:00">3</time>
+        <time datetime="4:00">4</time>
+        <time datetime="5:00">5</time>
+        <time datetime="6:00">6</time>
+        <time datetime="7:00">7</time>
+        <time datetime="8:00">8</time>
+        <time datetime="9:00">9</time>
+        <time datetime="10:00">10</time>
+        <time datetime="11:00">11</time>
+        <span class="arm seconds"></span>
+        <span class="arm minutes"></span>
+        <span class="arm hours"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+    integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </script>
+
+  <script src="script.js"> </script>
+
+
+  <script>
+  /* to set current time */
+      const time = new Date();
+      const hour = -3600 * (time.getHours() % 12);
+      const mins = -60 * time.getMinutes();
+      app.style.setProperty('--_dm', `${mins}s`);
+      app.style.setProperty('--_dh', `${(hour + mins)}s`);
+  </script>
+
+</body>
+
+</html>
