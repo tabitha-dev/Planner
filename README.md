@@ -15,7 +15,11 @@ Planner is an interactive and feature-rich calendar tool that makes event organi
 - **Local Storage**: Save your events and stickers locally without the need for backend integration.
 
 ---
+## Try It Here
 
+👉 [**Try it here**](https://tabitha-dev.github.io/Planner/)
+
+---
 ## 🛠️ Built With
 - **HTML5 & CSS3**: For a modern, responsive design.
 - **JavaScript**: Adds interactivity to the calendar and events.
