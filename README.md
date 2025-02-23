@@ -1,4 +1,4 @@
-# 🗓️ Planner - A Modern Event Management and Calendar Tool 🗓
+# 🗓️ Planner - A Modern Event Management and Calendar Tool 
 
 Planner is an interactive and feature-rich calendar tool that makes event organization a breeze. Manage your events, holidays, and personal notes all in one place with a user-friendly interface and dynamic functionality.
 ![image](https://github.com/user-attachments/assets/25de5859-73f6-4bc7-a94b-ad154f866ba6)
